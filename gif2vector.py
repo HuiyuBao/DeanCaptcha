@@ -1,13 +1,11 @@
 from PIL import Image
-<<<<<<< HEAD
 import numpy
-=======
->>>>>>> 5198eec3b3abd0188a76f5dc4f7de3ad9a3b4d78
 # test
 def gif2chars(file_path):
     '''get the individual images from gif file_path
     Read gif file from file path, extract the four individual characters from the image and return four individual pictures, as a list of pillow image objects. Note the size (width * height) of the image is NOT CHANGED, meaning lots of whitespace remains. Also, the RGB color information is stripped(TODO: is it really true?)
     '''
+    
     im = Image.open(file_path)
     colors = im.getcolors()
     list.sort(colors,reverse=True)
