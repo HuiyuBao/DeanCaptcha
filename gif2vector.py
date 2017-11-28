@@ -1,4 +1,5 @@
 from PIL import Image
+# test
 def gif2chars(file_path):
     '''get the individual images from gif file_path
     Read gif file from file path, extract the four individual characters from the image and return four individual pictures, as a list of pillow image objects. Note the size (width * height) of the image is NOT CHANGED, meaning lots of whitespace remains. Also, the RGB color information is stripped(TODO: is it really true?)
