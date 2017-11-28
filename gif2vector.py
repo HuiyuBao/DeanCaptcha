@@ -1,5 +1,8 @@
 from PIL import Image
+<<<<<<< HEAD
 import numpy
+=======
+>>>>>>> 5198eec3b3abd0188a76f5dc4f7de3ad9a3b4d78
 # test
 def gif2chars(file_path):
     '''get the individual images from gif file_path
