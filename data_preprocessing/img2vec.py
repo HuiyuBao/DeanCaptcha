@@ -92,8 +92,12 @@ def remove_background_resize(char_img):
 def char_img2numpy_str(img, return_numpy=True):
     '''Turns an individual char img to numpy str
     '''
-    n_array = numpy.array(img.getdata())
-    return n_array
+    if return_numpy == True:
+        n_array = numpy.array(img.getdata())
+        return n_array
+    elif return_numpy == False:
+        array = list(img.getdata())
+        return array
 
 def captcha2char_vectors(file_path, return_numpy=True):
     '''Calls all the above functions and do the thing!
@@ -106,5 +110,5 @@ def captcha2char_vectors(file_path, return_numpy=True):
     list.sort(resized_char_imgs)
 
     for i in range(4):
-        char_vectors.append(char_img2numpy_str(resized_char_imgs[i][1]))
+        char_vectors.append(char_img2numpy_str(resized_char_imgs[i][1], return_numpy))
     return char_vectors
