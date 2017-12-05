@@ -1,0 +1,8 @@
+need json like:
+
+{ '10101...1010':'A', '1010101001..1':'1', ..............}
+
+Attention! :
+numbers like '1' must be given by char
+alphabet like 'A' must be given by Capital char 
+
