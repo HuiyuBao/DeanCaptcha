@@ -1,3 +1,4 @@
+<<<<<<< HEAD:data_preprocessing/img2vec.py
 # External Libraries
 from PIL import Image # note: PIL is no longer in use. The name of the library is actually Pillow
 import numpy
@@ -8,7 +9,16 @@ def captcha2char_imgs(file_path):
     Read gif file from file path, extract the four individual characters from the image and return four individual pictures, as a list of pillow image objects. Note the size (width * height) of the image is NOT CHANGED, meaning lots of background pixels remains. Also, the RGB color information is stripped.
 
     The algorithm is naive: just get the four most used colors (excluding the background color, which is of course the most used, by a wide margin), and put all the pixels of each color in a picture, respectively. Of course, the assumption that a character is made of a single color is not vaild, but practically it matters little(I hope so).
+=======
+from PIL import Image
+import numpy
+# test
+def gif2chars(file_path):
+    '''get the individual images from gif file_path
+    Read gif file from file path, extract the four individual characters from the image and return four individual pictures, as a list of pillow image objects. Note the size (width * height) of the image is NOT CHANGED, meaning lots of whitespace remains. Also, the RGB color information is stripped(TODO: is it really true?)
+>>>>>>> 42b8c4544347a5fd919cabe1d1250d96ed5edba5:gif2vector.py
     '''
+
     im = Image.open(file_path)
     colors = im.getcolors()
     list.sort(colors,reverse=True)
@@ -76,10 +86,10 @@ def remove_background_resize(char_img):
     else:
          up = down - 11
 
-    if (left > 1) and ((left)+7 < width):
-        left = left - 2
+    if (left > 0) and ((left)+8 < width):
+        left = left - 1
         right = left + 9
-    elif (left == 0) or (left == 1):
+    elif (left == 0):
         right = left + 9
     else:
         left = right -9
