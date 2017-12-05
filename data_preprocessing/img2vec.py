@@ -107,7 +107,7 @@ def captcha2char_vectors(file_path, return_numpy=True):
     char_vectors = list()
     for i in range(4):
         resized_char_imgs.append(remove_background_resize(char_imgs[i]))
-    list.sort(resized_char_imgs)
+    list.sort(resized_char_imgs) # note the ordering of the characters.
 
     for i in range(4):
         char_vectors.append(char_img2numpy_str(resized_char_imgs[i][1], return_numpy))
